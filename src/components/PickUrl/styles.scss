@@ -1,4 +1,8 @@
 
+* {
+    font-family: 'Updock', 'Square Peg', cursive;
+}
+
 .main--pick {
     width: 80%;
     height: 80vh;
@@ -6,6 +10,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: 20px;
+}
+
+.main--title {
+    text-align: center;
+}
+
+.main--title:hover {
+    color: #fffff0;
+    text-decoration: underline;
 }
 
 .form--main {
@@ -13,7 +27,7 @@
 }
 
 input[type='url'] {
-    width: 205px;
+    width: 245px;
     height: 20px;
 }
 
