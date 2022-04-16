@@ -1,0 +1,37 @@
+
+.main--pick {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form--main {
+    margin-top: 20px;
+}
+
+input[type='url'] {
+    width: 205px;
+    height: 20px;
+}
+
+input[type='submit'] {
+    height: 26px;
+}
+
+.return--url {
+    margin: 20px 0px;
+}
+
+.short-cut-url {
+    border-style: solid;
+    padding: 2px;
+    margin-right: 10px;
+}
+
+input[type='image'] {
+    height: 28px;
+    padding: 2px;
+}
