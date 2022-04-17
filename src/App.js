@@ -1,5 +1,4 @@
 
-//import './App.css';
 import PickUrl from './components/PickUrl/PickUrl';
 import LoadUrl from './components/LoadUrl/LoadUrl';
 import Background from './components/Background/Background';

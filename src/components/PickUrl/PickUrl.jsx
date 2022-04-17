@@ -41,17 +41,13 @@ export default function PickUrl() {
         await axios.post("http://localhost:3001/short/",
                 {"origUrl": data.url, "callUrl": window.location.origin})
             .then((res) => {
-                console.log("res",res)
                 if (res.status === 200) {
-                    console.log('data', res.data.shortUrl);
                     setAnswer(res.data.shortUrl);
                 } else {
-                    console.log('statusText', res.statusText);
                     setAnswer(res.statusText);
                 } 
         })
     };
-
 
     return (<div className="main--pick"><StyleRoot>  
         <h1 className="main--title" style={styles.pulse}>SHORT&LAZY</h1>

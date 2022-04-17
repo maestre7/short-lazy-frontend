@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+
 import { zoomIn, slideInUp } from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 import Countdown from 'react-countdown';
 
+import './styles.scss';
+
+/* Style Animations */
 const styles = {
     zoomIn: {
         animation: 'x 1s',
@@ -22,17 +26,13 @@ export default function LoadUrl() {
 
     let { urlId } = useParams();
 
-    console.log('urlId',urlId);
     axios.get(`http://localhost:3001/${urlId}`)
-    .then((res) => {
-        console.log("res",res)
-        if (res.status === 200) {
-            console.log('data', res.data.shortUrl);
-            setAnswer(res.data.shortUrl);            
-        } else {
-            console.log('statusText', res.statusText);
-            setAnswer(res.statusText);
-        }
+        .then((res) => {
+            if (res.status === 200) {
+                setAnswer(res.data.shortUrl);            
+            } else {
+                setAnswer(res.statusText);
+            }
     });
 
     // Redirect component
