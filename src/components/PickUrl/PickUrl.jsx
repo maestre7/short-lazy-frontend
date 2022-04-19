@@ -50,7 +50,7 @@ export default function PickUrl() {
     };
 
     return (<div className="main--pick"><StyleRoot>  
-        <h1 className="main--title" style={styles.pulse}>SHORT&LAZY</h1>
+        <h1 className="main--title" style={styles.pulse}> SHORT & LAZY </h1>
         <div className="form--main" style={styles.zoomIn}>
             <form className="form--url" onSubmit={handleSubmit(onSubmit)} >
                 {/* Original Url */}
