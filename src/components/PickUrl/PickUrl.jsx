@@ -6,7 +6,7 @@ import axios from "axios";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { zoomIn, slideInUp } from 'react-animations';
+import { pulse, zoomIn, slideInUp } from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 
 import cliboart from "../../assets/static/copy.svg"
@@ -18,6 +18,10 @@ const schema = yup.object({
 });
 /* Style Animations */
 const styles = {
+    pulse: {
+        animation: 'infinite 5s',
+        animationName: Radium.keyframes(pulse, 'pulse')
+    },
     zoomIn: {
         animation: 'x 1s',
         animationName: Radium.keyframes(zoomIn, 'zoomIn')
@@ -37,20 +41,16 @@ export default function PickUrl() {
         await axios.post("http://localhost:3001/short/",
                 {"origUrl": data.url, "callUrl": window.location.origin})
             .then((res) => {
-                console.log("res",res)
                 if (res.status === 200) {
-                    console.log('data', res.data.shortUrl);
                     setAnswer(res.data.shortUrl);
                 } else {
-                    console.log('statusText', res.statusText);
                     setAnswer(res.statusText);
                 } 
         })
     };
 
-
     return (<div className="main--pick"><StyleRoot>  
-        <div>SHORT&LAZY</div>
+        <h1 className="main--title" style={styles.pulse}> SHORT & LAZY </h1>
         <div className="form--main" style={styles.zoomIn}>
             <form className="form--url" onSubmit={handleSubmit(onSubmit)} >
                 {/* Original Url */}

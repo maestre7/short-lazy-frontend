@@ -18,23 +18,24 @@
     left: 0;
     margin: 0;
     padding: 0;
-    background: #818898;
+    background: #f99f38;
     overflow: hidden;
     z-index: -1;
 }
+
 .background li {
     position: absolute;
     top: 80vh;
     left: 45vw;
     width: 10px;
     height: 10px;
-    border: solid 1px #747a88;
+    border: solid 1px #fff;
     color: transparent;
     transform-origin: top left;
     transform: scale(0) rotate(0deg) translate(-50%, -50%);
     animation: cube 7s ease-in forwards infinite;
 }
-undefined
+
 .background li:nth-child(0) {
     animation-delay: 0s;
     left: 0vw;
