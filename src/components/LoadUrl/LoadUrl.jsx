@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-import { zoomIn, slideInUp } from 'react-animations';
-import Radium, {StyleRoot} from 'radium';
-import Countdown from 'react-countdown';
+import { zoomIn, slideInUp } from "react-animations";
+import Radium, {StyleRoot} from "radium";
+import Countdown from "react-countdown";
 
-import './styles.scss';
+import "./styles.scss";
 
 /* Style Animations */
 const styles = {
     zoomIn: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(zoomIn, 'zoomIn')
+        animation: "x 1s",
+        animationName: Radium.keyframes(zoomIn, "zoomIn")
     },
     slideInUp: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(slideInUp, 'slideInUp')
+        animation: "x 1s",
+        animationName: Radium.keyframes(slideInUp, "slideInUp")
     }
 }
 

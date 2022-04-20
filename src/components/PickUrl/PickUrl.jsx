@@ -6,11 +6,11 @@ import axios from "axios";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { pulse, zoomIn, slideInUp } from 'react-animations';
-import Radium, {StyleRoot} from 'radium';
+import { pulse, zoomIn, slideInUp } from "react-animations";
+import Radium, {StyleRoot} from "radium";
 
 import cliboart from "../../assets/static/copy.svg"
-import './styles.scss';
+import "./styles.scss";
 
 /* Url Verification */
 const schema = yup.object({
@@ -19,16 +19,16 @@ const schema = yup.object({
 /* Style Animations */
 const styles = {
     pulse: {
-        animation: 'infinite 5s',
-        animationName: Radium.keyframes(pulse, 'pulse')
+        animation: "infinite 5s",
+        animationName: Radium.keyframes(pulse, "pulse")
     },
     zoomIn: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(zoomIn, 'zoomIn')
+        animation: "x 1s",
+        animationName: Radium.keyframes(zoomIn, "zoomIn")
     },
     slideInUp: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(slideInUp, 'slideInUp')
+        animation: "x 1s",
+        animationName: Radium.keyframes(slideInUp, "slideInUp")
     }
 }
 
