@@ -1,0 +1,30 @@
+
+.info {   
+    z-index: -1;
+    font-size: 150%;
+    font-style: italic;
+    font-weight: bold;
+    @media (max-height: 700px), (max-width: 400px) {
+        visibility: hidden;
+    }
+}
+
+.info--top--text {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 7%;
+    padding: 20px;
+    width: 70vw;
+    text-align: left;
+}
+
+.info--bottom--text {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 7%;
+    padding: 20px;
+    width: 70vw;
+    text-align: right;
+}
