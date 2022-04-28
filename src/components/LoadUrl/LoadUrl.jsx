@@ -2,21 +2,25 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-import { zoomIn, slideInUp } from 'react-animations';
-import Radium, {StyleRoot} from 'radium';
-import Countdown from 'react-countdown';
+import { zoomIn, slideInUp, pulse } from "react-animations";
+import Radium, {StyleRoot} from "radium";
+import Countdown from "react-countdown";
 
-import './styles.scss';
+import "./styles.scss";
 
 /* Style Animations */
 const styles = {
     zoomIn: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(zoomIn, 'zoomIn')
+        animation: "x 1s",
+        animationName: Radium.keyframes(zoomIn, "zoomIn")
     },
     slideInUp: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(slideInUp, 'slideInUp')
+        animation: "x 1s",
+        animationName: Radium.keyframes(slideInUp, "slideInUp")
+    },
+    pulse: {
+        animation: "infinite 1s",
+        animationName: Radium.keyframes(pulse, "pulse")
     }
 }
 
@@ -56,9 +60,9 @@ export default function LoadUrl() {
             {!answer ? <div> Loading...</div> : 
                 <div>
                     <div className="return--url" style={styles.slideInUp}>
-                        <a href={answer} className="short-cut-url">{answer}</a>   
+                        <a href={answer} className="short--cut--url">{answer}</a>   
                     </div>
-                    <div>
+                    <div style={styles.pulse}> {/* 10 seg */}
                         <Countdown date={Date.now() + 10000} renderer={renderer} />
                     </div>
                 </div>

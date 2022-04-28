@@ -6,37 +6,41 @@ import axios from "axios";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { pulse, zoomIn, slideInUp } from 'react-animations';
-import Radium, {StyleRoot} from 'radium';
+import { pulse, zoomIn, slideInUp} from "react-animations";
+import Radium, {StyleRoot} from "radium";
 
 import cliboart from "../../assets/static/copy.svg"
-import './styles.scss';
+import "./styles.scss";
+
 
 /* Url Verification */
 const schema = yup.object({
     url: yup.string().url("Please enter a valid url").required("Url is required"),
 });
+
 /* Style Animations */
 const styles = {
     pulse: {
-        animation: 'infinite 5s',
-        animationName: Radium.keyframes(pulse, 'pulse')
+        animation: "infinite 5s",
+        animationName: Radium.keyframes(pulse, "pulse")
     },
     zoomIn: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(zoomIn, 'zoomIn')
+        animation: "x 1s",
+        animationName: Radium.keyframes(zoomIn, "zoomIn")
     },
     slideInUp: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(slideInUp, 'slideInUp')
+        animation: "x 1s",
+        animationName: Radium.keyframes(slideInUp, "slideInUp")
     }
 }
 
 export default function PickUrl() {
+
     const [answer, setAnswer] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     });
+
     const onSubmit = async (data) => {
         await axios.post("http://localhost:3001/short/",
                 {"origUrl": data.url, "callUrl": window.location.origin})
@@ -63,12 +67,12 @@ export default function PickUrl() {
             {!answer ? null : 
                 <div className="return--url" style={styles.slideInUp}>
                     <a href={answer} className="short-cut-url">{answer}</a>
-                    {console.log(window.location.origin)}
                     <input type="image" src={cliboart} alt="Copy to Cliboard" 
                         onClick={() => {navigator.clipboard.writeText(answer)}} />
                 </div>
             }
         </div>
-    </StyleRoot></div>
+    </StyleRoot>
+    </div>
     )
 }
